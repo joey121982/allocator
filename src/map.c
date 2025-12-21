@@ -1,11 +1,11 @@
 #include <sys/mman.h>
 
 #include "map.h"
-
-#define ALIGN_TO_PAGE(x) ((x >> 12) + 1) << 12
+#include "types.h"
+#include "memblock.h"
 
 /**
- * @brief Get memory slab from OS.
+ * @brief Get memory slab from OS
  * 
  * @param size number of bytes to request
  */
@@ -28,5 +28,7 @@ void* get_mem_slab(size_t size) {
  * @param size slab size in bytes
  */
 void free_mem_slab(void* ptr, size_t size) {
-    munmap(ptr, size);
+    size_t real_size = ALIGN_TO_PAGE(size);
+
+    munmap(ptr, real_size);
 }
