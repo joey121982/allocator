@@ -4,11 +4,11 @@
 #include "types.h"
 #include "memblock.h"
 
-void init_allocator();
+memb* find_free_block(size_t size);
 memb* extend_list(size_t size);
 void* allocate(size_t size);
 void* callocate(size_t n, size_t size);
 void freemem(void* p);
-void reallocate(void* p, size_t size);
+void* reallocate(void* p, size_t size);
 
 #endif /* allocator.h */

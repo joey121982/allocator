@@ -22,5 +22,6 @@ typedef struct memory_block {
 } memb;
 
 void split_block(memb* block, size_t size);
+memb* coalesce_blocks(memb* block);
 
 #endif /* memblock.h */

@@ -5,7 +5,7 @@ LDFLAGS = -shared
 SRC_DIR   = ./src
 BUILD_DIR = ./build
 
-TARGET = allocator.so
+TARGET = liballocator.so
 
 SRCS := $(wildcard $(SRC_DIR)/*.c)
 OBJS := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
