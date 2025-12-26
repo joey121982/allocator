@@ -28,3 +28,10 @@ LD_PRELOAD=/PATH_TO_WRAPPER/libwrapper.so "your program here"
 
 * when testing i noticed sometimes it throws segfaults still, looking into that.
 * no reallocarray replacement yet.
+
+## TODO:
+
+* fix segfaults
+* add reallocarray
+* add doxygen docs to all functions (or atleast the ones in allocator.h)
+* refactor to optimize / reduce code
