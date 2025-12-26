@@ -38,7 +38,7 @@ memb* extend_list(size_t size) {
 }
 
 void* allocate(size_t size) {
-    size_t real_size = ALIGN_PAYLOAD(size + sizeof(memb_header));
+    size_t real_size = ALIGN_PAYLOAD(size + sizeof(memb));
 
     if (real_size < sizeof(memb)) {
         real_size = ALIGN_PAYLOAD(sizeof(memb));
@@ -54,7 +54,7 @@ void* allocate(size_t size) {
     }
     split_block(block, real_size);
     
-    return (byte*)block + sizeof(memb_header);
+    return (byte*)block + sizeof(memb);
 }
 
 void* callocate(size_t n, size_t size) {
@@ -77,9 +77,9 @@ void* reallocate(void* p, size_t size) {
         return NULL;
     }
 
-    memb_header* header = (memb_header*)((byte*)p - sizeof(memb_header));
+    memb_header* header = (memb_header*)((byte*)p - sizeof(memb));
     size_t old_size = header->size & ~1L;
-    size_t payload_size = old_size - sizeof(memb_header);
+    size_t payload_size = old_size - sizeof(memb);
 
     if(size <= payload_size) return p;
 
@@ -96,7 +96,7 @@ void* reallocate(void* p, size_t size) {
 void freemem(void* p) {
     if(p == NULL) return;
 
-    memb* block = (memb*)((byte*)p - sizeof(memb_header));
+    memb* block = (memb*)((byte*)p - sizeof(memb));
     block->header.size &= ~1L;
 
     block = coalesce_blocks(block);
