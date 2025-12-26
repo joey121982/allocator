@@ -2,7 +2,7 @@
 #include <stdlib.h> // for exit
 #include "allocator.h"
 
-#define N 1000
+#define N 1000000
 
 void check_ptr(void* ptr, const char* msg) {
     if (ptr == NULL) {
