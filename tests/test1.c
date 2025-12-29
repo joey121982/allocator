@@ -12,7 +12,7 @@ void check_ptr(void* ptr, const char* msg) {
 }
 
 int main() {
-    printf("--- Starting Test ---\n");
+    printf("--- Starting Test 1 - \"General use\" ---\n");
 
     /* TEST ALLOCATE */
     printf("[1] Allocating %lu bytes...\n", N * sizeof(int));
@@ -66,7 +66,7 @@ int main() {
     printf("\n");
 
     freemem(x);
-    printf("--- Test Finished ---\n");
+    printf("--- Test 1 Finished ---\n");
 
     return 0;
 }

@@ -16,7 +16,7 @@ void split_block(memb* block, size_t size) {
     block->next = (memb*)((byte*)block + size);
     
     memb* new_block = block->next;
-    new_block->header.size = block_size & ~1L;
+    new_block->header.size = remainder & ~1L;
     new_block->prev = block;
     new_block->next = old_next;
 
