@@ -36,6 +36,7 @@ LD_PRELOAD=/PATH_TO_WRAPPER/libwrapper.so "your program here"
 
 ## TODO:
 
+* add errno handling
 * add reallocarray
 * add doxygen docs to all functions (or atleast the ones in allocator.h)
 * refactor to optimize / reduce code
