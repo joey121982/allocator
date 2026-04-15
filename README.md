@@ -29,10 +29,11 @@ make test
 LD_PRELOAD=/PATH_TO_WRAPPER/libwrapper.so "your program here"
 ``` 
 
-## KNOWN ISSUES:
-
-* segfaults when using wrapper with ```LD_PRELOAD```.
-* no reallocarray replacement yet.
+>[!WARNING]
+>## KNOWN ISSUES:
+>
+>* segfaults when using wrapper with ```LD_PRELOAD```.
+>* no reallocarray replacement yet.
 
 ## TODO:
 
